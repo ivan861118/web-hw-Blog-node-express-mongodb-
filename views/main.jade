@@ -1,0 +1,30 @@
+extends layout
+//- extends main
+
+block content 
+ .container-fluid.h-100.row
+    h1 Blog
+  .container-fluid.border.border-primary
+    .container
+      .text-center.font-weight-bold 文章列表
+      div#article-list.container-fluid
+        each article,i in articles
+            a.article.col-3.list-group-item-action.btn.btn-outline-primary(href='/article/'+article._id)=article.title
+            //- if admin
+            //-     a.article.col-3.list-group-item-action.btn.btn-outline-primary(href='/article/'+article._id)=article.title
+            //- else if !admin
+            //-     a.article.col-3.list-group-item-action.btn.btn-outline-primary(href='#')=article.title
+    form#add-article(method="post",action="/") 
+        input#inputUserName.btn.btn-outline-primary(type="submit", value='新增文章' name="article")
+
+
+    //- script.
+    //-     //新增文章
+    //-     $('#add-article').submit(function(){
+    //-     var new_title=prompt('文章標題:');
+    //-     if(title){
+    //-     $('#article-list').append($('a',{
+    //-         class:'article col-3 list-group-item-action btn btn-outline-primary ',
+    //-         text:new_title}));
+    //-     }
+    //-     });

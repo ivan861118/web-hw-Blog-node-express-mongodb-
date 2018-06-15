@@ -1,0 +1,30 @@
+extends layout
+
+
+block content
+          form#send-form.mb-0.form-group(method='post', action='/article/'+article._id)
+            #form-group
+              label Title
+              input(name='title',value=article.title)
+            #form-group
+              textarea(name='body')= article.body
+              
+            //- button#edit.btn.btn-outline-primary.btn-sm(type='button') 編輯
+            //- button#confirm.btn.btn-outline-primary.btn-sm(type='button') 確認
+            hr
+            input.btn.btn-outline-primary.btn-sm(type='submit', name='submit', value='送出')
+          
+            //- form#delete.mb-0.form-group(method='post', ,='', action='/article/delete/'+article._id)
+            //-   input.btn.btn-danger.btn-sm(type='submit', name='delete', value='刪除')
+            
+           
+            //- a.btn.btn-default(href='/article/'+article._id) Edit 
+            //- a.btn.btn-danger.delete-article(href='#',data-id=article._id) Delete
+          //- script.
+          //-       // text area enable/disabled
+          //-       $('#edit').click(function(){
+          //-           $('#body').attr('disabled', false);           
+          //-       });
+          //-       $('#confirm').click(function(){
+          //-           $('#body').attr('disabled', true);
+          //-       });
